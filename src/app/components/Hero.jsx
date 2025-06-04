@@ -140,7 +140,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 py-20 flex items-center min-h-screen relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
           {/* Left Column - Enhanced Content */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Status Badge with Animation */}
 
             {/* Main Heading with Enhanced Animation */}
@@ -166,8 +166,8 @@ const HeroSection = () => {
             </div>
 
             {/* Dynamic Role Display */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 flex-wrap">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex items-center gap-3 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm hover:bg-purple-500/20 transition-all duration-300 group">
                   <Code className="w-5 h-5 text-purple-400 group-hover:rotate-12 transition-transform" />
                   <span className="text-purple-200 font-medium">
@@ -186,7 +186,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
                   <span className="inline-block border-r-2 border-purple-400 animate-pulse min-h-[1.2em]">
                     {typedText}
@@ -229,7 +229,7 @@ const HeroSection = () => {
             </div>
 
             {/* Enhanced Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+            <div className="flex flex-col sm:flex-row gap-6 ">
               <button className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center gap-4 overflow-hidden hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 to-pink-600/40 blur-2xl group-hover:blur-3xl transition-all duration-500" />
                 <Star className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform" />
