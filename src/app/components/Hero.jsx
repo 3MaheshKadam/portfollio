@@ -1,19 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  Mail,
-  Code,
-  Smartphone,
-  Github,
-  Linkedin,
-  Download,
-  Star,
-  Zap,
-  Terminal,
-  Globe,
-  Coffee,
-} from "lucide-react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -63,18 +49,18 @@ const HeroSection = () => {
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: "🐙",
       label: "GitHub",
       href: "#",
       color: "hover:text-purple-400",
     },
     {
-      icon: Linkedin,
+      icon: "💼",
       label: "LinkedIn",
       href: "#",
       color: "hover:text-blue-400",
     },
-    { icon: Mail, label: "Email", href: "#", color: "hover:text-green-400" },
+    { icon: "✉️", label: "Email", href: "#", color: "hover:text-green-400" },
   ];
 
   return (
@@ -85,15 +71,35 @@ const HeroSection = () => {
         <div
           className="absolute w-96 h-96 bg-gradient-to-r from-purple-600/30 to-pink-600/30 rounded-full blur-3xl transition-all duration-1000 ease-out"
           style={{
-            left: `${20 + (mousePosition.x / window.innerWidth) * 10}%`,
-            top: `${20 + (mousePosition.y / window.innerHeight) * 10}%`,
+            left: `${
+              20 +
+              (mousePosition.x /
+                (typeof window !== "undefined" ? window.innerWidth : 1920)) *
+                10
+            }%`,
+            top: `${
+              20 +
+              (mousePosition.y /
+                (typeof window !== "undefined" ? window.innerHeight : 1080)) *
+                10
+            }%`,
           }}
         />
         <div
           className="absolute w-80 h-80 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-full blur-3xl transition-all duration-1000 ease-out"
           style={{
-            right: `${20 + (mousePosition.x / window.innerWidth) * 10}%`,
-            bottom: `${20 + (mousePosition.y / window.innerHeight) * 10}%`,
+            right: `${
+              20 +
+              (mousePosition.x /
+                (typeof window !== "undefined" ? window.innerWidth : 1920)) *
+                10
+            }%`,
+            bottom: `${
+              20 +
+              (mousePosition.y /
+                (typeof window !== "undefined" ? window.innerHeight : 1080)) *
+                10
+            }%`,
           }}
         />
 
@@ -141,8 +147,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
           {/* Left Column - Enhanced Content */}
           <div className="space-y-8">
-            {/* Status Badge with Animation */}
-
             {/* Main Heading with Enhanced Animation */}
             <div className="space-y-8">
               <h1 className="text-6xl md:text-6xl lg:text-8xl font-black leading-none">
@@ -169,29 +173,39 @@ const HeroSection = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex items-center gap-3 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm hover:bg-purple-500/20 transition-all duration-300 group">
-                  <Code className="w-5 h-5 text-purple-400 group-hover:rotate-12 transition-transform" />
+                  <span className="w-5 h-5 text-purple-400 group-hover:rotate-12 transition-transform">
+                    💻
+                  </span>
                   <span className="text-purple-200 font-medium">
                     Full Stack
                   </span>
                 </div>
                 <div className="flex items-center gap-3 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full backdrop-blur-sm hover:bg-blue-500/20 transition-all duration-300 group">
-                  <Smartphone className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
+                  <span className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform">
+                    📱
+                  </span>
                   <span className="text-blue-200 font-medium">Mobile Dev</span>
                 </div>
                 <div className="flex items-center gap-3 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full backdrop-blur-sm hover:bg-green-500/20 transition-all duration-300 group">
-                  <Zap className="w-5 h-5 text-green-400 group-hover:rotate-12 transition-transform" />
+                  <span className="w-5 h-5 text-green-400 group-hover:rotate-12 transition-transform">
+                    ⚡
+                  </span>
                   <span className="text-green-200 font-medium">
                     Performance
                   </span>
                 </div>
               </div>
 
-              <div className="">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
-                  <span className="inline-block border-r-2 border-purple-400 animate-pulse min-h-[1.2em]">
-                    {typedText}
-                  </span>
-                </h2>
+              {/* FIXED: Stable height container for typed text */}
+              <div className="space-y-6">
+                {/* Fixed height container to prevent layout shift */}
+                <div className="h-16 md:h-20 flex items-center">
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
+                    <span className="inline-block border-r-2 border-purple-400 animate-pulse pr-1">
+                      {typedText}
+                    </span>
+                  </h2>
+                </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
                   Crafting pixel-perfect, high-performance web and mobile
@@ -232,16 +246,20 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-6 ">
               <button className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center gap-4 overflow-hidden hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 to-pink-600/40 blur-2xl group-hover:blur-3xl transition-all duration-500" />
-                <Star className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform" />
+                <span className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform">
+                  ⭐
+                </span>
                 <span className="relative z-10">View Projects</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+                <span className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10">
+                  →
+                </span>
 
                 {/* Shine effect */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
               </button>
 
               <button className="group relative border-2 border-gray-600/50 hover:border-purple-400/50 bg-gray-900/10 backdrop-blur-sm px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:bg-purple-600/10 flex items-center justify-center gap-4 hover:scale-105">
-                <Download className="w-6 h-6 group-hover:animate-bounce" />
+                <span className="w-6 h-6 group-hover:animate-bounce">📥</span>
                 <span>Download CV</span>
               </button>
             </div>
@@ -256,10 +274,10 @@ const HeroSection = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`group relative p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-xl transition-all duration-300  ${link.color} `}
+                    className={`group relative p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-xl transition-all duration-300 ${link.color} hover:scale-125`}
                   >
-                    <link.icon className="w-6 h-6 group-hover:scale-125 transition-transform" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl opacity-0 " />
+                    <span className="text-2xl">{link.icon}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
                 ))}
               </div>
@@ -279,19 +297,21 @@ const HeroSection = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full shadow-lg hover:scale-125 transition-transform cursor-pointer" />
                           </div>
                           <div className="flex items-center gap-2">
-                            <Terminal className="w-4 h-4 text-purple-400" />
+                            <span className="w-4 h-4 text-purple-400">💻</span>
                             <span className="text-gray-300 font-medium">
                               portfolio.jsx
                             </span>
                           </div>
                         </div>
-                        <Globe className="w-5 h-5 text-gray-500 hover:text-purple-400 transition-colors cursor-pointer" />
+                        <span className="w-5 h-5 text-gray-500 hover:text-purple-400 transition-colors cursor-pointer">
+                          🌐
+                        </span>
                       </div>
 
                       {/* Code Content with Enhanced Syntax */}
                       <div className="p-6 text-sm font-mono space-y-4 bg-gradient-to-b from-gray-900 to-gray-800 h-full overflow-hidden">
                         <div className="text-purple-400 font-bold flex items-center gap-2">
-                          <Coffee className="w-4 h-4" />
+                          <span className="w-4 h-4">☕</span>
                           <span className="text-blue-400">const</span> developer
                           = {"{"}
                         </div>
