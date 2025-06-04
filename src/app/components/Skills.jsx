@@ -9,7 +9,7 @@ const Skills = () => {
       color: "#61DAFB",
     },
     {
-      name: "React Native",
+      name: "Native",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       color: "#61DAFB",
     },
@@ -28,6 +28,7 @@ const Skills = () => {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
       color: "#FF9900",
     },
+
     {
       name: "MongoDB",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
@@ -84,7 +85,10 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <section
+      id="skills"
+      className="py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
