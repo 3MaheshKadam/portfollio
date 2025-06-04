@@ -177,7 +177,7 @@ const Footer = () => {
   };
 
   return (
-    <footer
+    <footer id="contact"
       className="bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
       style={{ backgroundColor: "#1f2937" }}
     >

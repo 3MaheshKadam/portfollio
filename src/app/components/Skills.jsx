@@ -84,7 +84,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <section id="skills" className="py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -30 }}

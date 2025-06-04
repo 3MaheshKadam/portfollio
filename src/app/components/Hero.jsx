@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -49,18 +50,23 @@ const HeroSection = () => {
 
   const socialLinks = [
     {
-      icon: "🐙",
+      icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      href: "#",
+      href: "shttps://github.com/3MaheshKadam",
       color: "hover:text-purple-400",
     },
     {
-      icon: "💼",
+      icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/mahesh-kadam3/",
       color: "hover:text-blue-400",
     },
-    { icon: "✉️", label: "Email", href: "#", color: "hover:text-green-400" },
+    {
+      icon: <Mail className="w-5 h-5" />,
+      label: "Email",
+      href: "mailto:maheshkadam9298@gmail.com",
+      color: "hover:text-green-400",
+    },
   ];
 
   return (
@@ -274,10 +280,10 @@ const HeroSection = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`group relative p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-xl transition-all duration-300 ${link.color} hover:scale-125`}
+                    className={`group relative p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-xl transition-all duration-300 ${link.color} `}
                   >
                     <span className="text-2xl">{link.icon}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
                 ))}
               </div>

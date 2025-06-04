@@ -141,7 +141,10 @@ const Projects = () => {
     const IconComponent = getDomainIcon(project.domain);
 
     return (
-      <div className="group bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out hover:border-blue-300">
+      <div
+        id="projects"
+        className="group bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out hover:border-blue-300"
+      >
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">

@@ -50,7 +50,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section
+    <section id="about"
       ref={containerRef}
       className="relative min-h-screen py-24 px-4 overflow-hidden"
       style={{
