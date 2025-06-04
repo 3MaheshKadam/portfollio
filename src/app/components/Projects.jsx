@@ -54,11 +54,25 @@ const Projects = () => {
 
   const delxnProjects = [
     {
+      title: "Dokument Guru",
+      domain: "Document Request & Management",
+      url: "https://dokument-guru.vercel.app",
+      description:
+        "Ticket-based document processing platform with multi-desk workflow. Includes billing, credit management, and status tracking.",
+    },
+    {
       title: "Rahul Nagar",
       domain: "Society Reconstruction Management",
       url: "https://www.rahulnagar.in",
       description:
         "A web portal for society management with features like event updates, document uploads, notice board, and meeting management.",
+    },
+    {
+      title: "Booking One Omega (USA Client)",
+      domain: "SaaS Multi-Tenant Booking System",
+      url: "https://booking-one-omega.vercel.app/",
+      description:
+        "Multi-tenant appointment booking system with SaaS architecture and admin roles.",
     },
     {
       title: "Policy Sansar",
@@ -67,13 +81,7 @@ const Projects = () => {
       description:
         "Collects policy enquiries from users and passes them to agents via admin panel. Includes customer management and agent follow-ups.",
     },
-    {
-      title: "Dokument Guru",
-      domain: "Document Request & Management",
-      url: "https://dokument-guru.vercel.app",
-      description:
-        "Ticket-based document processing platform with multi-desk workflow. Includes billing, credit management, and status tracking.",
-    },
+
     {
       title: "Shree Siddhi Jewellers",
       domain: "Retail / Inventory",
@@ -94,13 +102,7 @@ const Projects = () => {
       description:
         "Mobile app to manage daily milk orders, subscriptions, delivery tracking, and payments.",
     },
-    {
-      title: "Booking One Omega (USA Client)",
-      domain: "SaaS Multi-Tenant Booking System",
-      url: "https://booking-one-omega.vercel.app/",
-      description:
-        "Multi-tenant appointment booking system with SaaS architecture and admin roles.",
-    },
+
     {
       title: "Quick Commerce App",
       domain: "Q-Commerce / Delivery",
