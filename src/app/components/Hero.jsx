@@ -280,7 +280,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Column - Enhanced 3D Illustration - FIXED */}
-          <div className="relative flex justify-center items-center order-1 lg:order-2 py-8 lg:py-0">
+          <div className="relative flex justify-center items-center order-1 lg:order-2 py-28 mt-8 lg:py-0 ">
             <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
               {/* Main 3D Container - REMOVED fixed aspect ratio */}
               <div className="relative w-full perspective-1000">
@@ -340,7 +340,7 @@ const HeroSection = () => {
                           <div>"React Native" 📱,</div>
                           <div>"Next.js" ⚡,</div>
                           <div>"AWS" ☁️,</div>
-                          <div className="hidden sm:block">"TypeScript" 🔷</div>
+                          {/* <div className="hidden sm:block">"TypeScript" 🔷</div> */}
                         </div>
                         <div className="text-cyan-300 ml-3 sm:ml-4 lg:ml-6">
                           ],
@@ -374,7 +374,7 @@ const HeroSection = () => {
                       {
                         icon: "⚛️",
                         position:
-                          "absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8",
+                          "absolute -top-8 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8",
                         color: "from-blue-500/30 to-cyan-500/30",
                         delay: 0,
                       },
@@ -388,14 +388,14 @@ const HeroSection = () => {
                       {
                         icon: "☁️",
                         position:
-                          "absolute -top-6 left-1/4 sm:-top-8 sm:left-1/4 lg:-top-12 lg:left-1/4",
+                          "absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-top-8 lg:-left-8",
                         color: "from-green-500/30 to-emerald-500/30",
                         delay: 0.5,
                       },
                       {
                         icon: "⚡",
                         position:
-                          "absolute top-1/3 -right-4 sm:top-1/4 sm:-right-6 lg:top-1/4 lg:-right-8",
+                          "absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 lg:-bottom-8 lg:-right-8",
                         color: "from-yellow-500/30 to-orange-500/30",
                         delay: 2,
                       },
