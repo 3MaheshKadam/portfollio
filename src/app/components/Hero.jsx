@@ -43,6 +43,16 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, [currentRoleIndex]);
 
+  // Function to handle resume download
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/Mahesh Resume.pdf";
+    link.download = "Mahesh_Kadam_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const skills = [
     { name: "React Native", icon: "📱", color: "from-blue-500 to-cyan-500" },
     { name: "Next.js", icon: "⚡", color: "from-purple-500 to-pink-500" },
@@ -277,7 +287,10 @@ const HeroSection = () => {
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
               </button>
 
-              <button className="group relative border-2 border-gray-600/50 hover:border-purple-400/50 bg-gray-900/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all duration-500 hover:bg-purple-600/10 flex items-center justify-center gap-3 hover:scale-105">
+              <button
+                onClick={handleDownloadCV}
+                className="group relative border-2 border-gray-600/50 hover:border-purple-400/50 bg-gray-900/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all duration-500 hover:bg-purple-600/10 flex items-center justify-center gap-3 hover:scale-105"
+              >
                 <span className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce flex items-center justify-center">
                   📥
                 </span>
