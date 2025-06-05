@@ -85,6 +85,7 @@ const Projects = () => {
     {
       title: "Shree Siddhi Jewellers",
       domain: "Retail / Inventory",
+      url: "https://shreesiddhijwellers.vercel.app/",
       description:
         "Showcases jewelry products and handles customer enquiries. Built with responsive UI and tailored to store branding.",
     },
@@ -106,29 +107,11 @@ const Projects = () => {
     {
       title: "Quick Commerce App",
       domain: "Q-Commerce / Delivery",
-      tech: "Flutter",
+      tech: "React Native",
       description:
         "Grocery delivery app with real-time tracking, inventory, and delivery agent integration.",
     },
-    {
-      title: "Innosntech",
-      domain: "Startup IT Company Website",
-      description:
-        "Landing page for IT startup consulting company. Highlights services, team, and contact.",
-    },
-    {
-      title: "Anantshree.co.in",
-      domain: "Construction Landing Page",
-      url: "https://www.anantshree.co.in/",
-      description:
-        "Static responsive site for showcasing projects and values of a real estate firm.",
-    },
-    {
-      title: "Debugger Tech",
-      domain: "Education Platform",
-      description:
-        "E-learning platform with programming content, student registration, and course access.",
-    },
+
     {
       title: "Doctor Clinic SaaS Application",
       domain: "Healthcare / SaaS",
@@ -141,70 +124,72 @@ const Projects = () => {
     const IconComponent = getDomainIcon(project.domain);
 
     return (
-      <div
-        id="projects"
-        className="group bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out hover:border-blue-300"
-      >
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
-              <IconComponent className="w-5 h-5 text-blue-600" />
-            </div>
-            <div>
-              {project.url ? (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
-                >
-                  {project.title}
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </a>
-              ) : (
-                <h3 className="text-xl font-bold text-gray-900">
-                  {project.title}
-                </h3>
-              )}
-              <p className="text-sm text-gray-600 mt-1">{project.domain}</p>
+      <section>
+        <div
+          id="projects"
+          className="group bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out hover:border-blue-300 "
+        >
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
+                <IconComponent className="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
+                  >
+                    {project.title}
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  </a>
+                ) : (
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {project.title}
+                  </h3>
+                )}
+                <p className="text-sm text-gray-600 mt-1">{project.domain}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700">
-            {category}
-          </span>
-          {project.tech && (
-            <span
-              className={`px-3 py-1 text-xs font-medium rounded-full ${getTechBadgeColor(
-                project.tech
-              )} flex items-center gap-1`}
-            >
-              <Code className="w-3 h-3" />
-              {project.tech}
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700">
+              {category}
             </span>
+            {project.tech && (
+              <span
+                className={`px-3 py-1 text-xs font-medium rounded-full ${getTechBadgeColor(
+                  project.tech
+                )} flex items-center gap-1`}
+              >
+                <Code className="w-3 h-3" />
+                {project.tech}
+              </span>
+            )}
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {project.description}
+          </p>
+
+          {project.url && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200"
+              >
+                Visit Project
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </a>
+            </div>
           )}
         </div>
-
-        <p className="text-gray-700 text-sm leading-relaxed">
-          {project.description}
-        </p>
-
-        {project.url && (
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200"
-            >
-              Visit Project
-              <ExternalLink className="w-4 h-4 ml-1" />
-            </a>
-          </div>
-        )}
-      </div>
+      </section>
     );
   };
 

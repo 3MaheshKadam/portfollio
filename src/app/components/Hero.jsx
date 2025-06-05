@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -156,7 +157,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16 flex items-center min-h-screen relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center w-full">
           {/* Left Column - Enhanced Content */}
-          <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1">
+          <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-1 lg:order-1 pt-16 sm:pt-20 lg:pt-0">
             {/* Main Heading with Enhanced Animation */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-none">
@@ -179,36 +180,36 @@ const HeroSection = () => {
               </h1>
             </div>
 
-            {/* Dynamic Role Display */}
+            {/* Dynamic Role Display - FIXED ALIGNMENT */}
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
                 <div className="flex items-center gap-2 px-3 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm hover:bg-purple-500/20 transition-all duration-300 group">
-                  <span className="w-4 h-4 text-purple-400 group-hover:rotate-12 transition-transform">
+                  <span className="w-4 h-4 flex items-center justify-center text-purple-400 group-hover:rotate-12 transition-transform">
                     💻
                   </span>
-                  <span className="text-purple-200 font-medium text-sm">
+                  <span className="text-purple-200 font-medium text-sm flex items-center">
                     Full Stack
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full backdrop-blur-sm hover:bg-blue-500/20 transition-all duration-300 group">
-                  <span className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform">
+                  <span className="w-4 h-4 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                     📱
                   </span>
-                  <span className="text-blue-200 font-medium text-sm">
+                  <span className="text-blue-200 font-medium text-sm flex items-center">
                     Mobile Dev
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-2 bg-green-500/10 border border-green-500/30 rounded-full backdrop-blur-sm hover:bg-green-500/20 transition-all duration-300 group">
-                  <span className="w-4 h-4 text-green-400 group-hover:rotate-12 transition-transform">
+                  <span className="w-4 h-4 flex items-center justify-center text-green-400 group-hover:rotate-12 transition-transform">
                     ⚡
                   </span>
-                  <span className="text-green-200 font-medium text-sm">
+                  <span className="text-green-200 font-medium text-sm flex items-center">
                     Performance
                   </span>
                 </div>
               </div>
 
-              {/* FIXED: Stable height container for typed text */}
+              {/* Fixed height container for typed text */}
               <div className="space-y-3 sm:space-y-4">
                 {/* Fixed height container to prevent layout shift */}
                 <div className="h-10 sm:h-12 md:h-16 flex items-center justify-center lg:justify-start">
@@ -243,10 +244,10 @@ const HeroSection = () => {
                     className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}
                   />
                   <div className="relative flex items-center gap-2">
-                    <span className="text-lg group-hover:scale-125 transition-transform duration-300">
+                    <span className="text-lg group-hover:scale-125 transition-transform duration-300 flex items-center justify-center">
                       {skill.icon}
                     </span>
-                    <span className="text-gray-300 font-medium group-hover:text-white transition-colors text-sm">
+                    <span className="text-gray-300 font-medium group-hover:text-white transition-colors text-sm flex items-center">
                       {skill.name}
                     </span>
                   </div>
@@ -258,11 +259,17 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto lg:mx-0">
               <button className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center gap-3 overflow-hidden hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 to-pink-600/40 blur-2xl group-hover:blur-3xl transition-all duration-500" />
-                <span className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:rotate-12 transition-transform">
+                <span className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:rotate-12 transition-transform flex items-center justify-center">
                   ⭐
                 </span>
-                <span className="relative z-10">View Projects</span>
-                <span className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform relative z-10">
+                <Link
+                  href="/#projects"
+                  className="relative z-10 flex items-center"
+                >
+                  View Projects
+                </Link>
+
+                <span className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform relative z-10 flex items-center justify-center">
                   →
                 </span>
 
@@ -271,50 +278,52 @@ const HeroSection = () => {
               </button>
 
               <button className="group relative border-2 border-gray-600/50 hover:border-purple-400/50 bg-gray-900/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all duration-500 hover:bg-purple-600/10 flex items-center justify-center gap-3 hover:scale-105">
-                <span className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce">
+                <span className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce flex items-center justify-center">
                   📥
                 </span>
-                <span>Download CV</span>
+                <span className="flex items-center">Download CV</span>
               </button>
             </div>
           </div>
 
           {/* Right Column - Enhanced 3D Illustration - FIXED */}
-          <div className="relative flex justify-center items-center order-1 lg:order-2 py-28 mt-8 lg:py-0 ">
+          <div className="relative flex justify-center items-center order-2 lg:order-2 py-8 sm:py-12 lg:py-0 lg:pt-8">
             <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-              {/* Main 3D Container - REMOVED fixed aspect ratio */}
+              {/* Main 3D Container */}
               <div className="relative w-full perspective-1000">
                 <div className="relative w-full transform-gpu transition-all duration-1000 hover:rotate-y-12 hover:rotate-x-3">
-                  {/* Glass Container - IMPROVED height management */}
+                  {/* Glass Container */}
                   <div className="relative w-full bg-gradient-to-br from-purple-600/5 to-blue-600/5 rounded-3xl flex flex-col items-center justify-center backdrop-blur-2xl border border-purple-500/20 shadow-2xl group-hover:shadow-purple-500/20 transition-all duration-1000 p-4 sm:p-6 lg:p-8 min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
-                    {/* Enhanced Code Editor - IMPROVED sizing */}
+                    {/* Enhanced Code Editor - FIXED ALIGNMENT */}
                     <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md bg-gray-900/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-700/50 overflow-hidden transform transition-all duration-1000 hover:scale-105 group-hover:rotate-3 mb-6 lg:mb-8">
-                      {/* Title Bar */}
+                      {/* Title Bar - FIXED ALIGNMENT */}
                       <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 flex items-center justify-between">
                         <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-                          <div className="flex gap-1 sm:gap-2">
+                          <div className="flex items-center gap-1 sm:gap-2">
                             <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-red-500 rounded-full shadow-lg hover:scale-125 transition-transform cursor-pointer" />
                             <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-yellow-500 rounded-full shadow-lg hover:scale-125 transition-transform cursor-pointer" />
                             <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-green-500 rounded-full shadow-lg hover:scale-125 transition-transform cursor-pointer" />
                           </div>
                           <div className="flex items-center gap-1 sm:gap-2">
-                            <span className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400">
+                            <span className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 flex items-center justify-center">
                               💻
                             </span>
-                            <span className="text-gray-300 font-medium text-xs sm:text-sm lg:text-base">
+                            <span className="text-gray-300 font-medium text-xs sm:text-sm lg:text-base flex items-center">
                               portfolio.jsx
                             </span>
                           </div>
                         </div>
-                        <span className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-500 hover:text-purple-400 transition-colors cursor-pointer">
+                        <span className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-500 hover:text-purple-400 transition-colors cursor-pointer flex items-center justify-center">
                           🌐
                         </span>
                       </div>
 
-                      {/* Code Content - IMPROVED height and visibility */}
+                      {/* Code Content */}
                       <div className="p-3 sm:p-4 lg:p-6 text-xs sm:text-sm lg:text-base font-mono space-y-1 sm:space-y-2 lg:space-y-3 bg-gradient-to-b from-gray-900 to-gray-800 min-h-[200px] sm:min-h-[240px] lg:min-h-[300px]">
                         <div className="text-purple-400 font-bold flex items-center gap-1 sm:gap-2">
-                          <span className="w-3 h-3 sm:w-4 sm:h-4">☕</span>
+                          <span className="w-3 h-3 sm:w-4 sm:h-4 flex items-center justify-center">
+                            ☕
+                          </span>
                           <span className="text-blue-400">const</span> developer
                           = {"{"}
                         </div>
@@ -337,15 +346,16 @@ const HeroSection = () => {
                           <span className="text-cyan-300">[</span>
                         </div>
                         <div className="text-yellow-300 ml-5 sm:ml-6 lg:ml-10 space-y-1">
-                          <div>"React Native" 📱,</div>
-                          <div>"Next.js" ⚡,</div>
-                          <div>"AWS" ☁️,</div>
-                          {/* <div className="hidden sm:block">"TypeScript" 🔷</div> */}
+                          <div className="flex items-center">
+                            "React Native" 📱,
+                          </div>
+                          <div className="flex items-center">"Next.js" ⚡,</div>
+                          <div className="flex items-center">"AWS" ☁️,</div>
                         </div>
                         <div className="text-cyan-300 ml-3 sm:ml-4 lg:ml-6">
                           ],
                         </div>
-                        <div className="text-blue-300 ml-3 sm:ml-4 lg:ml-6">
+                        <div className="text-blue-300 ml-3 sm:ml-4 lg:ml-6 flex items-center gap-1 sm:gap-2">
                           <span className="text-green-400">passion:</span>
                           <span className="text-pink-300">
                             "Creating Magic ✨"
@@ -361,7 +371,7 @@ const HeroSection = () => {
                         <a
                           key={link.label}
                           href={link.href}
-                          className={`group relative p-2 sm:p-3 lg:p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-lg sm:rounded-xl transition-all duration-300 ${link.color} hover:scale-110`}
+                          className={`group relative p-2 sm:p-3 lg:p-4 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-lg sm:rounded-xl transition-all duration-300 ${link.color} hover:scale-110 flex items-center justify-center`}
                         >
                           {link.icon}
                           <div className="absolute inset-0 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -369,7 +379,7 @@ const HeroSection = () => {
                       ))}
                     </div>
 
-                    {/* Enhanced Floating Tech Icons - IMPROVED positioning */}
+                    {/* Enhanced Floating Tech Icons */}
                     {[
                       {
                         icon: "⚛️",
