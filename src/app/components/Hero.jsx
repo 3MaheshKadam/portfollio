@@ -81,7 +81,10 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white overflow-hidden relative">
+    <section
+      id="home"
+      className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white overflow-hidden relative"
+    >
       {/* Enhanced Interactive Background */}
       <div className="absolute inset-0">
         {/* Dynamic gradient orbs that follow mouse */}
