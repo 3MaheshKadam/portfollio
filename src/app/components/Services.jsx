@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Services = () => {
@@ -206,22 +207,7 @@ const Services = () => {
                   initial={{ opacity: 0, x: -10 }}
                   whileHover={{ opacity: 1, x: 0 }}
                   className="mt-4 flex items-center text-gray-600 text-sm font-medium"
-                >
-                  <span>Learn more</span>
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </motion.div>
+                ></motion.div>
               </div>
 
               {/* Subtle Glow Effect */}
@@ -301,13 +287,15 @@ const Services = () => {
               vision to life with clean code, modern practices, and reliable
               delivery.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get In Touch
-            </motion.button>
+            <Link href="/#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get In Touch
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

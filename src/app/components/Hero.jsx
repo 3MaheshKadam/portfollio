@@ -46,8 +46,8 @@ const HeroSection = () => {
   // Function to handle resume download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Mahesh Resume.pdf";
-    link.download = "Mahesh_Kadam_Resume.pdf";
+    link.href = "/Mahesh-Kadam_Resume.pdf";
+    link.download = "Mahesh_kadam_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -247,7 +247,7 @@ const HeroSection = () => {
               {skills.map((skill, index) => (
                 <div
                   key={skill.name}
-                  className="group relative p-3 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-2xl hover:border-purple-500/50 transition-all duration-500 cursor-pointer hover:scale-105 hover:bg-gray-800/40"
+                  className="group relative p-3 bg-gray-800/20 border border-gray-700/30 backdrop-blur-sm rounded-2xl hover:border-purple-500/50 transition-all duration-500  hover:scale-105 hover:bg-gray-800/40"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div

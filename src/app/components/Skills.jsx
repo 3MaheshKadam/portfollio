@@ -25,7 +25,7 @@ const Skills = () => {
     },
     {
       name: "AWS",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
       color: "#FF9900",
     },
 

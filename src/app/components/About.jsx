@@ -50,7 +50,8 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about"
+    <section
+      id="about"
       ref={containerRef}
       className="relative min-h-screen py-24 px-4 overflow-hidden"
       style={{
@@ -156,7 +157,7 @@ const AboutSection = () => {
                 border: "border-purple-500/30",
               },
               {
-                text: "Currently, I'm expanding my skill set by learning Java to strengthen my backend development capabilities and deepen my understanding of programming fundamentals. I believe in continuous learning because technology evolves rapidly, and staying curious keeps me sharp.",
+                text: "Currently, I'm expanding my skill set by learning python to strengthen my backend development capabilities and deepen my understanding of programming fundamentals. I believe in continuous learning because technology evolves rapidly, and staying curious keeps me sharp.",
                 gradient: "from-orange-500/20 to-red-500/20",
                 border: "border-orange-500/30",
               },
@@ -221,17 +222,18 @@ const AboutSection = () => {
                     color: "from-blue-400 to-blue-600",
                     icon: "📱",
                   },
+
+                  {
+                    name: "python",
+                    level: 80,
+                    color: "from-orange-500 to-red-600",
+                    icon: "📚",
+                  },
                   {
                     name: "JavaScript",
                     level: 88,
                     color: "from-yellow-400 to-orange-500",
                     icon: "🚀",
-                  },
-                  {
-                    name: "Java",
-                    level: 40,
-                    color: "from-orange-500 to-red-600",
-                    icon: "📚",
                   },
                 ].map((skill, index) => (
                   <motion.div
@@ -303,7 +305,7 @@ const AboutSection = () => {
                       scale: 1.05,
                       rotateZ: index % 2 === 0 ? 2 : -2,
                     }}
-                    className="relative p-6 rounded-xl backdrop-blur-xl bg-white/10 border border-white/20 group cursor-pointer"
+                    className="relative p-6 rounded-xl backdrop-blur-xl bg-white/10 group cursor-pointer"
                   >
                     <div className="flex items-center space-x-4">
                       <div
@@ -318,22 +320,6 @@ const AboutSection = () => {
                         <p className="text-gray-300">{hobby.description}</p>
                       </div>
                     </div>
-
-                    {/* Animated border */}
-                    <motion.div
-                      className="absolute inset-0 rounded-xl border-2 opacity-0 group-hover:opacity-100"
-                      style={{
-                        borderImage: `linear-gradient(45deg, transparent, ${hobby.gradient}, transparent) 1`,
-                      }}
-                      animate={{
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    />
                   </motion.div>
                 ))}
               </div>
