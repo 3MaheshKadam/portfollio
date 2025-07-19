@@ -50,7 +50,10 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-white text-gray-800 overflow-hidden">
+    <section
+      id="experience"
+      className="relative py-20 bg-white text-gray-800 overflow-hidden"
+    >
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left column */}
